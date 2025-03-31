@@ -1,308 +1,450 @@
 local k = Instance.new("ScreenGui")
 k.Parent = game.Players.LocalPlayer.PlayerGui
-local main = Instance.new("TextButton")
-main.Parent = k
-main.Size = UDim2.new(0,700,0,500)
-main.Position = UDim2.new(0.15,0,-2)
-main.Active = true
-main.Draggable = true
-main.Text = ""
-local mainc = Instance.new("UICorner")
-mainc.Parent = main
-mainc.CornerRadius = UDim.new(0.06,0)
-local mg = Instance.new("UIGradient")
-mg.Parent = main
-mg.Color = ColorSequence.new({
-    ColorSequenceKeypoint.new(0, Color3.fromRGB(200,0,200)),
-    ColorSequenceKeypoint.new(1,Color3.fromRGB(0,0,0))
-})
-mg.Rotation = 90
-local exit = Instance.new("TextButton")
-exit.Parent = main
-exit.Size = UDim2.new(0.1,0,0.1)
-exit.Position = UDim2.new(0.9,0,0)
-exit.BackgroundTransparency = 1
-exit.Text = "X"
-exit.TextScaled = true
-exit.Font = Enum.Font.FredokaOne
-exit.TextColor3 = Color3.new(1,1,1)
-exit.TextTransparency = 0.7
-local blur = Instance.new("BlurEffect")
-blur.Parent = game.Lighting
-blur.Size = 0
 local tw = game:GetService("TweenService")
-local elastic = TweenInfo.new(1,Enum.EasingStyle.Elastic,Enum.EasingDirection.Out)
-local back = TweenInfo.new(0.5,Enum.EasingStyle.Back,Enum.EasingDirection.Out)
-local quint = TweenInfo.new(1.5,Enum.EasingStyle.Quint,Enum.EasingDirection.Out)
-local zazhim = tw:Create(mainc,back,{CornerRadius = UDim.new(0.11,0)})
-local otzhim = tw:Create(mainc,elastic,{CornerRadius = UDim.new(0.06,0)})
-local oioi = tw:Create(exit,back,{Rotation = 45})
-local uh = tw:Create(exit,elastic,{Rotation = 0})
-local eee = tw:Create(blur,quint,{Size = 40})
-local uhh = tw:Create(blur,quint,{Size = 0})
-main.MouseButton1Down:Connect(function()
-zazhim:Play()
-oioi:Play()
-eee:Play()
+local ifo = TweenInfo.new(0.1, Enum.EasingStyle.Linear,Enum.EasingDirection.Out)
+local ifo2 = TweenInfo.new(0.7,Enum.EasingStyle.Quint,Enum.EasingDirection.Out)
+local ifo3 = TweenInfo.new(1,Enum.EasingStyle.Back,Enum.EasingDirection.Out)
+local ifo4 = TweenInfo.new(1,Enum.EasingStyle.Quint,Enum.EasingDirection.Out)
+local f = Instance.new("TextButton")
+f.Parent = k
+f.Size = UDim2.new(0,290,0,450)
+f.Position = UDim2.new(0.375, 0, 0, 0)
+f.BackgroundColor3 = Color3.fromRGB(0, 100, 150)
+f.BorderSizePixel = 0
+f.BorderColor3 = Color3.new(0.2,0.2,0.2)
+f.Active = true
+f.Visible = false
+f.Text = ""
+
+local loa = Instance.new("Frame")
+loa.Parent = k
+loa.Size = UDim2.new(0,290,0,450)
+loa.Position = UDim2.new(0.375,0,-2,0)
+loa.BackgroundColor3 = Color3.fromRGB(0,0,150)
+loa.BorderSizePixel = 0
+loa.ClipsDescendants = true
+local lab = Instance.new("TextLabel")
+lab.Parent = loa
+lab.Size = UDim2.new(1,0,0.1)
+lab.BackgroundTransparency = 1
+lab.Text = "MODELUM LOADER"
+lab.TextColor3 = Color3.new(0.5,0.5,0.5)
+lab.Font = Enum.Font.Fantasy
+lab.TextScaled = true
+local lb = Instance.new("TextButton")
+lb.Parent = loa
+lb.Size = UDim2.new(0.1,0,1)
+lb.Position = UDim2.new(0.45,0,1)
+lb.BackgroundTransparency = 0.5
+lb.BackgroundColor3 = Color3.new(0,0,0)
+lb.BorderSizePixel = 0
+lb.Text = "Launch"
+lb.TextScaled = true
+lb.Font = Enum.Font.SourceSansLight
+lb.TextColor3 = Color3.new(0.5,0.5,0.5)
+local ll = Instance.new("TextLabel")
+ll.Parent = loa
+ll.Size = UDim2.new(0.95,0,0.8)
+ll.Position = UDim2.new(0.025,0,0.1)
+ll.BackgroundTransparency = 1
+ll.TextColor3 = Color3.new(0.4,0.4,0.4)
+ll.TextScaled = true
+ll.Font = Enum.Font.SourceSansLight
+ll.Text = [[Modelum: Script For "Shark Bite2",
+Supports: 35%+ UNC Executors
+Made: By Darina @Govemeban800[#0000]
+
+
+@ETK - (discord.gg/msBDpk94)
+]]
+local hello = tw:Create(loa,ifo4,{Position = UDim2.new(0.375,0,0)})
+hello:Play()
+local sure = tw:Create(lb,ifo4,{Position = UDim2.new(0,0,0.85)})
+local sure2 = tw:Create(lb,ifo4,{Size = UDim2.new(1,0,0.15)})
+wait(2)
+sure:Play()
+sure2:Play()
+lb.MouseButton1Down:Connect(function()
+local vanish = tw:Create(loa,ifo3,{BackgroundTransparency = 1})
+vanish:Play()
+f.Visible = true
 end)
-main.MouseButton1Up:Connect(function()
-otzhim:Play()
-uh:Play()
-uhh:Play()
-end)
-local hi = tw:Create(main,quint,{Position = UDim2.new(0.15,0,0)})
-hi:Play()
-local bye = tw:Create(main,quint,{Size = UDim2.new(0,700,0,0)})
-local eaugh = tw:Create(mainc,quint,{CornerRadius = UDim.new(0.3,0)})
-local why = tw:Create(exit,quint,{TextColor3 = Color3.new(1,0,0)})
-local whyy = tw:Create(mg,quint,{Rotation = -228})
-local ok = tw:Create(exit,quint,{TextColor3 = Color3.new(1,1,1)})
-exit.MouseButton1Up:Connect(function()
-ok:Play()
-end)
-exit.MouseButton1Down:Connect(function()
-why:Play()
-whyy:Play()
-end)
-exit.MouseButton1Click:Connect(function()
-bye:Play()
-eaugh:Play()
+lb.MouseButton1Up:Connect(function()
+local dissapear = {BackgroundTransparency = 1, TextTransparency = 1}
+local vanish1 = tw:Create(ll,ifo3,dissapear)
+local vanish2 = tw:Create(lab,ifo3,dissapear)
+local vanish3 = tw:Create(lb,ifo3,dissapear)
+vanish1:Play()
+vanish2:Play()
+vanish3:Play()
 wait(1)
-k:Destroy()
+loa:Destroy()
+f.Draggable = true
 end)
-local name = Instance.new("TextLabel")
-name.Parent = main
-name.Size = UDim2.new(0.45,0,0.1)
-name.Position = UDim2.new(0.05,0,0)
-name.BackgroundTransparency = 1
-name.Text = "SB2 - <3"
-name.TextXAlignment = Enum.TextXAlignment.Left
-name.Font = Enum.Font.FredokaOne
-name.TextScaled = true
-name.TextColor3 = Color3.new(1,1,1)
-name.TextTransparency = 0.7
-local m = Instance.new("TextLabel")
-m.Parent = main
-m.Size = UDim2.new(0.4,0,0.06)
-m.Position = UDim2.new(0.0,0,0.1)
-m.BackgroundTransparency = 1
-m.TextScaled = true
-m.Font = Enum.Font.Fantasy
-m.Text = "MENU"
-m.TextColor3 = Color3.new(1,1,1)
-m.TextTransparency = 0.75
-local sf = Instance.new("TextButton")
-sf.Parent = main
-sf.Size = UDim2.new(0.3,0,0.2)
-sf.Position = UDim2.new(0.025,0,0.2)
-sf.BackgroundTransparency = 0.9
-sf.BackgroundColor3 = Color3.new(1,1,1)
-sf.Text = "SHARK"
-sf.TextScaled = true
-sf.TextColor3 = Color3.new(1,1,1)
-sf.Font = Enum.Font.Kalam
-sf.TextTransparency = 0.5
-local sfc = Instance.new("UICorner")
-sfc.Parent = sf
-local sf1 = Instance.new("TextButton")
-sf1.Parent = main
-sf1.Size = UDim2.new(0.3,0,0.2)
-sf1.Position = UDim2.new(0.35,0,0.2)
-sf1.BackgroundTransparency = 0.9
-sf1.BackgroundColor3 = Color3.new(1,1,1)
-sf1.Text = "PLAYER"
-sf1.TextScaled = true
-sf1.TextColor3 = Color3.new(1,1,1)
-sf1.Font = Enum.Font.Kalam
-sf1.TextTransparency = 0.5
-local sfc1 = Instance.new("UICorner")
-sfc1.Parent = sf1
-local sf2 = Instance.new("TextButton")
-sf2.Parent = main
-sf2.Size = UDim2.new(0.3,0,0.2)
-sf2.Position = UDim2.new(0.675,0,0.2)
-sf2.BackgroundTransparency = 0.9
-sf2.BackgroundColor3 = Color3.new(1,1,1)
-sf2.Text = "OTHERS"
-sf2.TextScaled = true
-sf2.TextColor3 = Color3.new(1,1,1)
-sf2.Font = Enum.Font.Kalam
-sf2.TextTransparency = 0.5
-local sfc2 = Instance.new("UICorner")
-sfc2.Parent = sf2
-
--- > for sharks <--
-local sm = Instance.new("Frame")
-sm.Parent = k
-sm.Size = UDim2.new(0,150,0,0)
-sm.BackgroundColor3 = Color3.fromRGB(100,0,100)
-sm.Active = true
-sm.Draggable = true
-local smo = tw:Create(sm, quint, {Size = UDim2.new(0, 150, 0, 290)})
-local smoff = tw:Create(sm, quint, {Size = UDim2.new(0, 150, 0, 0)})
-sf.MouseButton1Click:Connect(function()
-if sm.Size == UDim2.new(0,150,0,0) then
-    smo:Play()
-    sm.Position = UDim2.new(0,0,0)
-  else
-    smoff:Play()
-end
+local ff = Instance.new("Frame")
+ff.Parent = f
+ff.Size = UDim2.new(0.2, 0, 0.9, 0)
+ff.Position = UDim2.new(0.05, 0, 0.075, 0)
+ff.BackgroundColor3 = Color3.fromRGB(0, 100, 150)
+ff.BorderColor3 = Color3.fromRGB(0,0,10)
+ff.BorderSizePixel = 5
+local yaa = tw:Create(f,ifo,{BorderSizePixel = 10})
+local ooo = tw:Create(f,ifo,{BorderSizePixel = 0})
+f.MouseButton1Down:Connect(function()
+yaa:Play()
+f.BackgroundTransparency = 0.05
 end)
-local smc = Instance.new("UICorner")
-smc.Parent = sm
-local sl = Instance.new("TextLabel")
-sl.Parent = sm
-sl.Size = UDim2.new(1,0,0.075)
-sl.BackgroundTransparency = 1
-sl.Text = "FOR SHARKS"
-sl.Font = Enum.Font.Fantasy
-sl.TextColor3 = Color3.new(1,1,1)
-sl.TextScaled = true
-local gsm = Instance.new("UIGradient")
-gsm.Parent = sm
-gsm.Color = ColorSequence.new({
-    ColorSequenceKeypoint.new(0,Color3.fromRGB(200,0,200)),
-    ColorSequenceKeypoint.new(1,Color3.fromRGB(0,0,0))
-})
-gsm.Rotation = 90
-local b1 = Instance.new("TextButton")
-b1.Parent = sm
-b1.Size = UDim2.new(1,0,0.1)
-b1.Position = UDim2.new(0,0,0.1)
-b1.BackgroundColor3 = Color3.new(1,1,1)
-b1.BorderSizePixel = 0
-b1.BackgroundTransparency = 1
-b1.Text = "LOCATE PLAYERS"
-b1.Font = Enum.Font.SciFi
-b1.TextColor3 = Color3.new(1,1,1)
-b1.TextScaled = true
-b1.MouseButton1Click:Connect(function()
-b1.BackgroundTransparency = 0.7
+f.MouseButton1Up:Connect(function()
+ooo:Play()
+f.BackgroundTransparency = 0
 end)
-local b2 = Instance.new("TextButton")
-b2.Parent = sm
-b2.Size = UDim2.new(1,0,0.1)
-b2.Position = UDim2.new(0,0,0.2)
-b2.BackgroundColor3 = Color3.new(1,1,1)
-b2.BackgroundTransparency = 1
-b2.BorderSizePixel = 0
-b2.Text = "FASTER SHARK"
-b2.TextScaled = true
-b2.TextColor3 = Color3.new(1,1,1)
-b2.Font = Enum.Font.SourceSans
-b2.MouseButton1Click:Connect(function()
-    if b2.BackgroundTransparency == 1 then
-        b2.BackgroundTransparency = 0.7
-      else
-        b2.BackgroundTransparency = 1
-    end
+local c = Instance.new("TextButton")
+c.Parent = f
+c.Size = UDim2.new(0.075, 0, 0.05, 0)
+c.Position = UDim2.new(0.925, 0, 0, 0)
+c.BackgroundColor3 = Color3.new(0, 1, 0)
+c.Text = ""
+local cc = Instance.new("UICorner")
+cc.Parent = c
+cc.CornerRadius = UDim.new(1, 0)
+local fff = Instance.new("Frame")
+fff.Parent = f
+fff.Size = UDim2.new(0.625, 0, 0.85, 0)
+fff.Position = UDim2.new(0.3, 0, 0.125, 0)
+fff.BackgroundColor3 = Color3.fromRGB(0, 100, 150)
+fff.BorderSizePixel = 5
+fff.BorderColor3 = Color3.fromRGB(0, 0, 10)
+local l = Instance.new("TextLabel")
+l.Parent = f
+l.Size = UDim2.new(0.55, 0, 0.125,0)
+l.Position = UDim2.new(0.3, 0, 0, 0)
+l.BackgroundTransparency = 1
+l.Text = "MODELUM.live"
+l.Font = Enum.Font.SourceSansBold
+l.TextScaled = true
+l.TextColor3 = Color3.new(0.2,0.2,0.2)
+local m = Instance.new("Frame")
+m.Parent = k
+m.Size = UDim2.new(0,200,0,50)
+m.Position = f.Position
+m.BackgroundColor3 = Color3.fromRGB(0, 100, 150)
+m.BorderSizePixel = 0
+m.Active = true
+m.Draggable = true
+local mb = Instance.new("TextButton")
+mb.Parent = m
+mb.Size = UDim2.new(0.1, 0, 0.5, 0)
+mb.Position = UDim2.new(0.9, 0, 0, 0)
+mb.BackgroundColor3 = Color3.new(1, 0, 0)
+mb.Text = ""
+local mc = Instance.new("UICorner")
+mc.Parent = mb
+mc.CornerRadius = UDim.new(1, 0)
+local ml = Instance.new("TextLabel")
+ml.Parent = m
+ml.Size = UDim2.new(0.7, 0, 1, 0)
+ml.BackgroundTransparency = 1
+ml.Position = UDim2.new(0.05, 0, 0, 0)
+ml.Text = l.Text
+ml.TextColor3 = l.TextColor3
+ml.TextScaled = true
+ml.Font = l.Font
+m.Visible = false
+mb.MouseButton1Click:Connect(function()
+  f.Position = m.Position
+  f.Visible = true
+  m.Visible = false
+  local ii = tw:Create(f,ifo,{BorderSizePixel = 0})
+  f.BorderSizePixel = 10
+  ii:Play()
+end)
+c.MouseButton1Click:Connect(function()
+  m.Position = f.Position
+    local pp = tw:Create(m,ifo,{BorderSizePixel = 0})
+    m.BorderSizePixel = 10
+  m.Visible = true
+  f.Visible = false
+  pp:Play()
 end)
 
 
--- > for players <--
-local pm = Instance.new("Frame")
-pm.Parent = k
-pm.Size = UDim2.new(0, 150, 0, 0)
-pm.BackgroundColor3 = Color3.fromRGB(0, 100, 100)
-pm.Active = true
-pm.Draggable = true
-pm.Position = UDim2.new(0.2, 0, 0)
-local pmo = tw:Create(pm, quint, {Size = UDim2.new(0, 150, 0, 290)})
-local pmoff = tw:Create(pm, quint, {Size = UDim2.new(0, 150, 0, 0)})
-sf1.MouseButton1Click:Connect(function()
-    if pm.Size == UDim2.new(0, 150, 0, 0) then
-        pmo:Play()
-        pm.Position = UDim2.new(0.15, 0, 0)
-    else
-        pmoff:Play()
-    end
+-- o
+local pp1 = Instance.new("Frame")
+pp1.Parent = fff
+pp1.Size = UDim2.new(1,0,1)
+pp1.BackgroundTransparency = 1
+
+local pp2 = Instance.new("Frame")
+pp2.Parent = fff
+pp2.Size = UDim2.new(1,0,1)
+pp2.BackgroundTransparency = 1
+
+local pp3 = Instance.new("Frame")
+pp3.Parent = fff
+pp3.Size = UDim2.new(1,0,1)
+pp3.BackgroundTransparency = 1
+
+
+local p1 = Instance.new("ImageButton")
+p1.Parent = ff
+p1.Size = UDim2.new(1, 0, 0.15, 0)
+p1.Position = UDim2.new(0,0,0.025,0)
+p1.BackgroundColor3 = Color3.new(0.2, 0.2, 0.2)
+p1.BorderSizePixel = 1
+p1.Image = "https://roblox.com/asset/?id=115141866237604"
+local p2 = Instance.new("ImageButton")
+p2.Parent = ff
+p2.Size = UDim2.new(1, 0, 0.15, 0)
+p2.Position = UDim2.new(0, 0, 0.2, 0)
+p2.BackgroundColor3 = p1.BackgroundColor3
+p2.BorderSizePixel = 1
+p2.Image = "https://roblox.com/asset/?id=133464786811996"
+local p3 = Instance.new("ImageButton")
+p3.Parent = ff
+p3.Size = UDim2.new(1, 0, 0.15, 0)
+p3.Position = UDim2.new(0, 0, 0.375, 0)
+p3.BackgroundColor3 = p1.BackgroundColor3
+p3.BorderSizePixel = 1
+p3.Image = "https://roblox.com/asset/?id=12345"
+local tab1 = Instance.new("Frame")
+tab1.Parent = fff
+tab1.Size = UDim2.new(1,0,1)
+tab1.BackgroundTransparency = 1
+local tab2 = Instance.new("Frame")
+tab2.Parent = fff
+tab2.Size = UDim2.new(1,0,1)
+tab2.BackgroundTransparency = 1
+local tab3 = Instance.new("Frame")
+tab3.Parent = fff
+tab3.Size = UDim2.new(1,0,1)
+tab3.BackgroundTransparency = 1
+tab1.Position = UDim2.new(0,0,0)
+tab2.Position = UDim2.new(0,0,1)
+tab3.Position = UDim2.new(0,0,2)
+
+local tar = {Position = UDim2.new(0,0,-2)}
+local tar1 = {Position = UDim2.new(0,0,-1)}
+local tar2 = {Position = UDim2.new(0,0,0)}
+local tar3 = {Position = UDim2.new(0,0,1)}
+local tar4 = {Position = UDim2.new(0,0,2)}
+
+local op11 = tw:Create(tab1,ifo2,tar)
+local op12 = tw:Create(tab1,ifo2,tar1)
+local op13 = tw:Create(tab1,ifo2,tar2)
+
+local op21 = tw:Create(tab2,ifo2,tar2)
+local op22 = tw:Create(tab2,ifo2,tar1)
+local op23 = tw:Create(tab2,ifo2,tar3)
+
+local op31 = tw:Create(tab3,ifo2,tar2)
+local op32 = tw:Create(tab3,ifo2,tar3)
+local op33 = tw:Create(tab3,ifo2,tar4)
+
+p1.MouseButton1Click:Connect(function()
+    op13:Play()
+    op23:Play()
+    op33:Play()
 end)
-local pmc = Instance.new("UICorner")
-pmc.Parent = pm
-local pl = Instance.new("TextLabel")
-pl.Parent = pm
-pl.Size = UDim2.new(1, 0, 0.075)
-pl.BackgroundTransparency = 1
-pl.Text = "FOR PLAYER"
-pl.Font = Enum.Font.Fantasy
-pl.TextColor3 = Color3.new(1, 1, 1)
-pl.TextScaled = true
-local gpm = Instance.new("UIGradient")
-gpm.Parent = pm
-gpm.Color = ColorSequence.new({
-    ColorSequenceKeypoint.new(0, Color3.fromRGB(0, 200, 200)),
-    ColorSequenceKeypoint.new(1, Color3.fromRGB(0, 0, 0))
-})
-gpm.Rotation = 90
-local p3 = Instance.new("TextButton")
-p3.Parent = pm
-p3.Size = UDim2.new(1,0,0.1)
-p3.Position = UDim2.new(0,0,0.1)
-p3.BackgroundColor3 = Color3.fromRGB(255,255,255)
-p3.BackgroundTransparency = 1
-p3.Text = "AVOID WATER"
-p3.Font = Enum.Font.SciFi
-p3.TextColor3 = Color3.new(1,1,1)
-p3.TextScaled = true
+
+p2.MouseButton1Click:Connect(function()
+    op12:Play()
+    op21:Play()
+    op32:Play()
+end)
+
 p3.MouseButton1Click:Connect(function()
-    if p3.BackgroundTransparency == 1 then
-        p3.BackgroundTransparency = 0.7
-      else
-        p3.BackgroundTransparency = 1
-    end
-end)
-local p4 = Instance.new("TextButton")
-p4.Parent = pm
-p4.Size = UDim2.new(1,0,0.1)
-p4.Position = UDim2.new(0,0,0.2)
-p4.BackgroundColor3 = Color3.new(1,1,1)
-p4.Text = "AVOID SHARK"
-p4.TextScaled = true
-p4.TextColor3 = Color3.new(1,1,1)
-p4.Font = Enum.Font.SciFi
-p4.BackgroundTransparency = 1
-p4.MouseButton1Click:Connect(function()
-    if p4.BackgroundTransparency == 1 then
-        p4.BackgroundTransparency = 0.7
-      else
-        p4.BackgroundTransparency = 1
-    end
+    op31:Play()
+    op22:Play()
+    op11:Play()
 end)
 
+-- bs
+local b11 = Instance.new("Frame")
+b11.Parent = tab1
+b11.Size = UDim2.fromScale(1, 0.15)
+b11.Position = UDim2.fromScale(0, 0.025)
+b11.BackgroundColor3 = p1.BackgroundColor3
+local bb11 = Instance.new("TextButton")
+bb11.Parent = b11
+bb11.Size = UDim2.fromScale(0.3, 0.6)
+bb11.Position = UDim2.fromScale(0.675, 0.2)
+bb11.BackgroundColor3 = Color3.new(1, 0, 0)
+bb11.Text = ""
+local bl11 = Instance.new("TextLabel")
+bl11.Parent = b11
+bl11.Size = UDim2.fromScale(0.6, 0.5)
+bl11.BackgroundTransparency = 1
+bl11.Text = "PLAYER HIGHLIGHT"
+bl11.TextScaled = true
+bl11.TextColor3 = Color3.new(1, 1, 1)
+bl11.Font = Enum.Font.Fantasy
+local b21 = Instance.new("Frame")
+b21.Parent = tab1
+b21.Size = b11.Size
+b21.Position = UDim2.fromScale(0, 0.2)
+b21.BackgroundColor3 = b11.BackgroundColor3
+local bb21 = Instance.new("TextButton")
+bb21.Parent = b21
+bb21.Size = bb11.Size
+bb21.Position = bb11.Position
+bb21.BackgroundColor3 = Color3.new(0.5,0.5,0.5)
+bb21.Text = ""
+local bl21 = Instance.new("TextLabel")
+bl21.Parent = b21
+bl21.Size = bl11.Size
+bl21.BackgroundTransparency = 1
+bl21.Text = "FASTER SHARK"
+bl21.Font = Enum.Font.Fantasy
+bl21.TextColor3 = Color3.new(1, 1, 1)
+bl21.TextScaled = true
+local b31 = Instance.new("Frame")
+b31.Parent = tab1
+b31.Size = b11.Size
+b31.Position = UDim2.fromScale(0, 0.375)
+b31.BackgroundColor3 = b11.BackgroundColor3
+local bb31 = Instance.new("TextButton")
+bb31.Parent = b31
+bb31.Size = bb21.Size
+bb31.Position = bb21.Position
+bb31.BackgroundColor3 = Color3.new(1,0,0)
+bb31.Text = ""
+local bl31 = Instance.new("TextLabel")
+bl31.Parent = b31
+bl31.Size = bl21.Size
+bl31.Position = bl21.Position
+bl31.BackgroundTransparency = 1
+bl31.Text = "SHARK FLIGHT"
+bl31.TextColor3 = Color3.new(1, 1, 1)
+bl31.Font = Enum.Font.Fantasy
+bl31.TextScaled = true
+local b12 = Instance.new("Frame")
+b12.Parent = tab2
+b12.Size = b11.Size
+b12.Position = b11.Position
+b12.BackgroundColor3 = b11.BackgroundColor3
+local bl12 = Instance.new("TextLabel")
+bl12.Parent = b12
+bl12.Size = bl11.Size
+bl12.Position = bl11.Position
+bl12.BackgroundTransparency = 1
+bl12.Text = "BOAT FLIGHT"
+bl12.Font = bl11.Font
+bl12.TextScaled = true
+bl12.TextColor3 = bl11.TextColor3
+local bb12 = Instance.new("TextButton")
+bb12.Parent = b12
+bb12.Size = bb11.Size
+bb12.Position = bb11.Position
+bb12.BackgroundColor3 = Color3.new(1, 0, 0)
+bb12.Text = ""
+local b22 = Instance.new("Frame")
+b22.Parent = tab2
+b22.Size = UDim2.new(1, 0, 0.15, 0)
+b22.Position = b21.Position
+b22.BackgroundColor3 = b11.BackgroundColor3
+local bl22 = Instance.new("TextLabel")
+bl22.Parent = b22
+bl22.Size = bl11.Size
+bl22.Font = bl11.Font
+bl22.BackgroundTransparency = 1
+bl22.Text = "FASTER BOAT"
+bl22.TextScaled = true
+bl22.TextColor3 = Color3.new(1, 1, 1)
+local bb22 = Instance.new("TextButton")
+bb22.Parent = b22
+bb22.Size = bb12.Size
+bb22.Position = bb11.Position
+bb22.BackgroundColor3 = Color3.new(1, 0, 0)
+bb22.Text = ""
+fff.ClipsDescendants = true
+local b13 = Instance.new("Frame")
+b13.Parent = tab3
+b13.Size = UDim2.fromScale(1, 0.15)
+b13.Position = UDim2.fromScale(0, 0.025)
+b13.BackgroundColor3 = p1.BackgroundColor3
+local bb13 = Instance.new("TextButton")
+bb13.Parent = b13
+bb13.Size = UDim2.fromScale(0.3, 0.6)
+bb13.Position = UDim2.fromScale(0.675, 0.2)
+bb13.BackgroundColor3 = Color3.new(1, 0, 0)
+bb13.Text = ""
+local bl13 = Instance.new("TextLabel")
+bl13.Parent = b13
+bl13.Size = UDim2.fromScale(0.6, 0.5)
+bl13.BackgroundTransparency = 1
+bl13.Text = "DELETE GUN"
+bl13.TextScaled = true
+bl13.TextColor3 = Color3.new(1, 1, 1)
+bl13.Font = Enum.Font.Fantasy
 
+local b23 = Instance.new("Frame")
+b23.Parent = tab3
+b23.Size = b13.Size
+b23.Position = UDim2.fromScale(0, 0.2)
+b23.BackgroundColor3 = b13.BackgroundColor3
+local bb23 = Instance.new("TextButton")
+bb23.Parent = b23
+bb23.Size = bb13.Size
+bb23.Position = bb13.Position
+bb23.BackgroundColor3 = Color3.new(1, 0, 0)
+bb23.Text = ""
+local bl23 = Instance.new("TextLabel")
+bl23.Parent = b23
+bl23.Size = bl13.Size
+bl23.BackgroundTransparency = 1
+bl23.Text = "GET GUN"
+bl23.Font = Enum.Font.Fantasy
+bl23.TextColor3 = Color3.new(1, 1, 1)
+bl23.TextScaled = true
 
--- > for others <--
-local om = Instance.new("Frame")
-om.Parent = k
-om.Size = UDim2.new(0, 150, 0, 0)
-om.BackgroundColor3 = Color3.fromRGB(100, 100, 0)
-om.Active = true
-om.Draggable = true
-om.Position = UDim2.new(0.3,0,0)
-local omo = tw:Create(om, quint, {Size = UDim2.new(0, 150, 0, 290)})
-local omoff = tw:Create(om, quint, {Size = UDim2.new(0, 150, 0, 0)})
-sf2.MouseButton1Click:Connect(function()
-    if om.Size == UDim2.new(0, 150, 0, 0) then
-        omo:Play()
-        om.Position = UDim2.new(0.3, 0, 0)
-    else
-        omoff:Play()
-    end
+local shal = {Size = UDim2.new(1,0,0.10)}
+local unshal = {Size = UDim2.new(1,0,0.15)}
+local hall1 = {Position = UDim2.new(0,0,0.055)}
+local unhall1 = {Position = UDim2.new(0,0,0.025)}
+local hall2 = {Position = UDim2.new(0,0,0.225)}
+local unhall2 = {Position = UDim2.new(0,0,0.2)}
+local hall3 = {Position = UDim2.new(0,0,0.4)}
+local unhall3 = {Position = UDim2.new(0,0,0.375)}
+local slime1 = tw:Create(p1,ifo2,shal)
+local unslime1 = tw:Create(p1,ifo2,unshal)
+local slime2 = tw:Create(p2,ifo2,shal)
+local unslime2 = tw:Create(p2,ifo2,unshal)
+local slime3 = tw:Create(p3,ifo2,shal)
+local unslime3 = tw:Create(p3,ifo2,unshal)
+local oi1 = tw:Create(p1,ifo2,hall1)
+local unoi1 = tw:Create(p1,ifo2,unhall1)
+local oi2 = tw:Create(p2,ifo2,hall2)
+local unoi2 = tw:Create(p2,ifo2,unhall2)
+local oi3 = tw:Create(p3,ifo2,hall3)
+local unoi3 = tw:Create(p3,ifo2,unhall3)
+
+p1.MouseButton1Down:Connect(function()
+slime1:Play()
 end)
-local omc = Instance.new("UICorner")
-omc.Parent = om
-local ol = Instance.new("TextLabel")
-ol.Parent = om
-ol.Size = UDim2.new(1, 0, 0.075)
-ol.BackgroundTransparency = 1
-ol.Text = "FOR OTHERS"
-ol.Font = Enum.Font.Fantasy
-ol.TextColor3 = Color3.new(1, 1, 1)
-ol.TextScaled = true
-local gom = Instance.new("UIGradient")
-gom.Parent = om
-gom.Color = ColorSequence.new({
-    ColorSequenceKeypoint.new(0, Color3.fromRGB(200, 200, 0)),
-    ColorSequenceKeypoint.new(1, Color3.fromRGB(0, 0, 0))
-})
-gom.Rotation = 90
+p1.MouseButton1Up:Connect(function()
+unoi1:Play()
+unslime1:Play()
+end)
+p2.MouseButton1Down:Connect(function()
+oi1:Play()
+oi2:Play()
+slime2:Play()
+end)
+p2.MouseButton1Up:Connect(function()
+unoi1:Play()
+unoi2:Play()
+unslime2:Play()
+end)
+p3.MouseButton1Down:Connect(function()
+oi1:Play()
+oi3:Play()
+oi2:Play()
+slime3:Play()
+end)
+p3.MouseButton1Up:Connect(function()
+unoi1:Play()
+unoi3:Play()
+unoi2:Play()
+unslime3:Play()
+end)
+ff.ClipsDescendants = true
